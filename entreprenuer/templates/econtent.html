@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entreprenuer | Content</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'entreprenuer/css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'entreprenuer/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'entreprenuer:home' %}">Home</a></li>
+    <li><a href="{% url 'entreprenuer:services' %}">Services</a></li>
+    <li><a href="{% url 'entreprenuer:contact' %}">Contact</a></li>
+    <li><a href="{% url 'entreprenuer:about' %}">About</a></li>
+    <li><a href="{% url 'entreprenuer:logout' %}">Logout</a></li>
+</ul>
+</div>
+</header>
+<br>
+<div class="cont">
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+            {% for investor in investors %}
+            <tr>
+                <td>{{investor.fullname}}</td>
+                <td>{{investor.email}}</td>
+                <td>{{investor.mobileno}}</td>
+                <td>{{investor.location}}</td>
+                <td><a href="/entreprenuer/details/{{investor.email}}">View</a></td>
+            </tr>
+            {% empty %}
+            <h2 align="center">No Investors Found</h2>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</body>
+</html>

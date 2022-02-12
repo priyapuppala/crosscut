@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entreprenuer | Login</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'entreprenuer/css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'services' %}">Services</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+</ul>
+</div>
+</header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="signin()">Sign In</button>
+                    <button type="button" class="toggle-btn" onclick="signup()">Register</button>
+                </div>
+
+                <form id="signin" class="input-group" method="POST">
+
+                    {% csrf_token %}
+                     <input type="email" class = "input-field" id="myEmail" name="email" placeholder="Enter Email" required>
+                    <input type="password" class="input-field" id="in-password" name="password" placeholder="Enter Password" required>
+                    <br><br>
+                    <button type="submit" id='rg' class="submit-btn"name="submit" value="login" >Sign In</button>
+
+                </form>
+                <form id="signup" class="input-group" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <br>
+                    <button type="submit" id="lg" class="submit-btn" name="submit" value="register">Register</button>
+
+                </form>
+            </div>
+        </div>
+        <script>
+            var x = document.getElementById("signin");
+            var y = document.getElementById("signup");
+            var z = document.getElementById("btn");
+
+            function signup(){
+                x.style.left = "-400px";
+                y.style.left = "50px";
+                z.style.left = "110px";
+            }
+            function signin(){
+                x.style.left = "50px";
+                y.style.left = "450px";
+                z.style.left = "0";
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+.services {margin:90px auto;text-align:center;}
+body{
+
+background-size:cover;background-position:center;color:#fff !important;}
+
+
+h3 a{color:white}
+
+
+h1{font-family:sans-serif;letter-spacing:1px;}
+
+h1:after {content:'';background:white;display:block;width:150px;
+height:3px;margin:10px auto;}
+
+
+.icon{font-size:40px;margin:20px auto;padding:20px;height:80px;width:80px;
+border: 1px solid white;border-radius:50%}
+
+
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Investor | Services</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'investor/css/styles.css' %}">   <link rel="stylesheet" href="{% static 'css/styles.css' %}"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<script src="https://kit.fontawesome.com/51f7ea6787.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'investor/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'investor:home' %}">Home</a></li>
+    <li><a href="{% url 'investor:services' %}">Services</a></li>
+    <li><a href="{% url 'investor:contact' %}">Contact</a></li>
+    <li><a href="{% url 'investor:about' %}">About</a></li>
+    <li><a href="{% url 'investor:logout' %}">Logout</a></li>
+</ul>
+</div>
+</header>
+
+<br>    <br><br>
+<div class="container">
+<div class="services">
+
+<h1>Our Services</a></h1>
+
+</div>
+<div class="row">
+   <div class="col-md-3 text-center">
+     <div class="icon"><i class="far fa-lightbulb"></i>
+
+</div>
+<h3><a>Start Ups</a></h3>
+<p>Investors can check for the best innovative start ups from our website without any interuptions and they can make a appointment with them.
+ </p>
+</div>
+
+ <div class="col-md-3 text-center">
+     <div class="icon">
+     <i class="far fa-handshake"></i>
+
+</div>
+<h3><a>Approvals</a></h3>
+<p>Investors give appointment to the entreprenuers whose ideas they think as creative from the list of ideas. So the startup approval rate is usually more.
+ </p>
+</div>
+
+ <div class="col-md-3 text-center">
+     <div class="icon"><i class="far fa-thumbs-up"></i>
+
+</div>
+<h3><a>Most Trusted</a></h3>
+<p>We maintain our user profiles discretely. The information is never disclosed. So, our website is used by the most investors and entreprenuers.
+ </p>
+</div>
+
+<div class="col-md-3 text-center">
+     <div class="icon"><i class="fas fa-coins"></i>
+
+</div>
+<h3><a>Free</a></h3>
+<p>Our website don't charge anything and it is absolutely free. Our mission is to serve the world’s most extraordinary people who are building tomorrow’s companies today.
+ </p>
+</div>
+
+
+
+
+</div>
+
+
+</div>
+</body>
+</html>

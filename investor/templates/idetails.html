@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .like{
+    padding: 10px;
+    text-decoration:none;
+    outline:none;
+    border:none;
+    background: #000;
+    border-radius: 30px;
+    color:#fff;
+    }
+    .like:hover{
+    padding: 10px;
+    text-decoration:none;
+    outline:none;
+    border:none;
+    border-radius: 30px;
+    background: #000;
+    color:#fff;
+    }
+    .like:focus{
+    padding: 10px;
+    border-radius: 30px;
+    text-decoration:none;
+    outline:none;
+    border:none;
+    background: #000;
+    color:#fff;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Investor | Details</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'investor/css/styles.css' %}"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'investor/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'investor:home' %}">Home</a></li>
+    <li><a href="{% url 'investor:services' %}">Services</a></li>
+    <li><a href="{% url 'investor:contact' %}">Contact</a></li>
+    <li><a href="{% url 'investor:about' %}">About</a></li>
+    <li><a href="{% url 'investor:logout' %}">Logout</a></li>
+</ul>
+</div>
+</header>
+    <br>
+<div class="cont-det">
+<center>
+            <table>
+            <h1 align="center">Entreprenuer Details</h1>
+              <tr>
+                <th>Name</th>
+                <td width="2%">:</td>
+                <td>{{eni.fullname}}</td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td width="2%">:</td>
+                <td>{{eni.email}}</td>
+              </tr>
+              <tr>
+                <th>StartUp Name</th>
+                <td width="2%">:</td>
+                <td>{{eni.ideaname}}</td>
+              </tr>
+              <tr>
+                <th>StartUp Description</th>
+                <td width="2%">:</td>
+                <td>{{eni.ideadesc}}</td>
+              </tr>
+              <tr>
+                <th>Business System</th>
+                <td width="2%">:</td>
+                <td>{{eni.ideacat}}</td>
+              </tr>
+              <tr>
+                <th>Resume</th>
+                <td width="2%">:</td>
+                <td><a href="{{eni.resume.url}}" target="_blank">View</a></td>
+              </tr>
+              <tr>
+                <th>Contact</th>
+                <td width="2%">:</td>
+                <td>{{eni.mobileno}}</td>
+              </tr>
+              <tr>
+                <th>Location</th>
+                <td width="2%">:</td>
+                <td>{{eni.location}}</td>
+              </tr>
+              <tr>
+                <th>About</th>
+                <td width="2%">:</td>
+                <td>{{eni.about}}</td>
+              </tr>
+              <tr>
+                <th>Total Likes</th>
+                <td width="2%">:</td>
+                <td>{{c}}</td>
+              </tr>
+            </table>
+                    <form method="post">
+                        {% csrf_token %}
+                     {% if n is False %}
+                     <a class= 'like' href="{% url 'investor:idealike' %}"><i class="fas fa-thumbs-up"></i> Like</a>
+                     {% endif %}
+                     {% if n is True %}
+                     <a class='like' href="{% url 'investor:idealike' %}"><i class="fas fa-thumbs-down"></i> Unlike</a>
+                     {% endif %}
+                    </form><br>
+                     <button onclick="window.location.href='/investor/ignore/{{eni.email}}'">Ignore</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                     <button onclick="window.location.href=window.location.href='/investor/appointment/{{eni.email}}'">Accept</button>
+    </center>
+</div>
+</body>
+</html>

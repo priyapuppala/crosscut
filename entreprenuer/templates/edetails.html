@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entreprenuer | Details</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'entreprenuer/css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'entreprenuer/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'entreprenuer:home' %}">Home</a></li>
+    <li><a href="{% url 'entreprenuer:services' %}">Services</a></li>
+    <li><a href="{% url 'entreprenuer:contact' %}">Contact</a></li>
+    <li><a href="{% url 'entreprenuer:about' %}">About</a></li>
+    <li><a href="{% url 'entreprenuer:logout' %}">Logout</a></li>
+</ul>
+</div>
+</header>
+<br>
+<div class="cont-det">
+    <div><center>
+        <table>
+            <h1 align="center">Investor Details</h1>
+            <tr>
+                <th>Name : </th>
+                <td>{{inv.fullname}}</td>
+            </tr>
+            <tr>
+                <th>Username : </th>
+                <td>{{inv.username}}</td>
+            </tr>
+            <tr>
+                <th>Company : </th>
+                <td>{{inv.company}}</td>
+            </tr>
+            <tr>
+                <th>Email : </th>
+                <td>{{inv.email}}</td>
+            </tr>
+            <tr>
+                <th>Mobile : </th>
+                <td>{{inv.mobile}}</td>
+            </tr>
+            <tr>
+                <th>Location : </th>
+                <td>{{inv.location}}</td>
+            </tr>
+            <tr>
+                <th>Qualification : </th>
+                <td>{{inv.qualification}}</td>
+            </tr>
+            <tr>
+                <th>Designation : </th>
+                <td>{{inv.designation}}</td>
+            </tr>
+            <tr>
+                <th>Investments History : </th>
+                <td>{{inv.history}}</td>
+            </tr>
+            <tr>
+                <th>Bussiness System : </th>
+                <td>{{inv.category}}</td>
+            </tr>
+            <tr>
+                <th>Description : </th>
+                <td>{{inv.about}}</td>
+            </tr>
+        </table>
+            <button onclick="window.location.href='/entreprenuer/ideas/{{inv.email}}'">Provide StartUp Details</button>
+        </center>
+    </div>
+</div>
+</body>
+</html>

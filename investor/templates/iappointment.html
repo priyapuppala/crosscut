@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investor | Appointment</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'investor/css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'investor/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'investor:home' %}">Home</a></li>
+    <li><a href="{% url 'investor:services' %}">Services</a></li>
+    <li><a href="{% url 'investor:contact' %}">Contact</a></li>
+    <li><a href="{% url 'investor:about' %}">About</a></li>
+    <li><a href="{% url 'investor:logout' %}">Logout</a></li>
+</ul>
+</div>
+</header>
+
+    <br>
+        <br>
+    <br>
+    <section id="p-section">
+    <div class="log-pr">
+        <form method="post">
+  <div class="container"><center>
+    <h1>Appointment Mail</h1><br>
+    <p>Please fill details to send approval mail to the Entreprenuer</p><br>
+      </center>
+          <center>
+      <table>
+         {% csrf_token %}
+          <tr>
+              <td>
+                  <label><b>Time</b></label>
+              </td>
+              <td class="ltd">
+                  <input type="time" name="atime">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label><b>Date</b></label>
+              </td>
+              <td class="ltd">
+                  <input type="date" name="adate">
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label><b>Feedback</b></label>
+              </td>
+              <td class="ltd">
+                  <textarea type="textarea" rows="5" name="feedback" placeholder="Feedback Regarding The StartUp Idea and Your Suggestions"></textarea>
+              </td>
+          </tr>
+
+      </table>
+     <br>
+    <button type="submit" value="submit" >Submit</button>
+
+      </center>
+  </div>
+</form>
+
+    </div>
+  </section>
+</body>
+</html>

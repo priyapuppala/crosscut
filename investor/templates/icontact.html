@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investor | Contact</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'investor/css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'investor/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'investor:home' %}">Home</a></li>
+    <li><a href="{% url 'investor:services' %}">Services</a></li>
+    <li><a href="{% url 'investor:contact' %}">Contact</a></li>
+    <li><a href="{% url 'investor:about' %}">About</a></li>
+    <li><a href="{% url 'investor:logout' %}">Logout</a></li>
+</ul>
+</div>
+</header>
+<br>
+<div class="log-box">
+    <div class="log">
+        <h2>Contact Us</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+        <button type="submit">Submit</button>
+        </form>
+    </div>
+    </div>
+
+</body>
+</html>

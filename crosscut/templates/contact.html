@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'services' %}">Services</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+</ul>
+</div>
+</header>
+<br>
+<div class="log-box">
+    <div class="log">
+        <h2>Contact Us</h2>
+        <input type="text" placeholder="Enter Name">
+        <input type="text" placeholder="Enter Email">
+        <textarea rows=4 placeholder="Write Something"></textarea><br><br>
+        <button onclick="alert('Login is Required')">Submit</button>
+    </div>
+    </div>
+</body>
+</html>

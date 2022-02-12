@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin | IDetails</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'crosscutadmin/css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'crosscutadmin/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'crosscutadmin:home' %}">Home</a></li>
+    <li><a href="{% url 'crosscutadmin:dashboard' %}">Dashboard</a></li>
+    <li><a href="{% url 'crosscutadmin:services' %}">Services</a></li>
+    <li><a href="{% url 'crosscutadmin:about' %}">About</a></li>
+    <li><a href="{% url 'crosscutadmin:logout' %}">Logout</a></li>
+</ul>
+</div>
+</header>
+<br>
+<div class="cont">
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+            {% for e in invdet %}
+            <tr>
+                <td>{{e.fullname}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.mobileno}}</td>
+                <td>{{e.location}}</td>
+                <td><a href="indelete/{{e.email}}">Delete</a></td>
+            </tr>
+            {% empty %}
+            <h2 align="center">No Investors Found</h2>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</body>
+</html>

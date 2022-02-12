@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Investor | Content</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'investor/css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'investor/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'investor:home' %}">Home</a></li>
+    <li><a href="{% url 'investor:services' %}">Services</a></li>
+    <li><a href="{% url 'investor:contact' %}">Contact</a></li>
+    <li><a href="{% url 'investor:about' %}">About</a></li>
+    <li><a href="{% url 'investor:logout' %}">Logout</a></li>
+</ul>
+</div>
+</header>
+
+<br>
+<br>
+<br>
+<br>
+<div class="cont">
+    <div>
+        <table>
+            <h1>Recommended</h1>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Idea Name</th>
+                <th>Idea Desc</th>
+                <th>Action</th>
+            </tr>
+            {% for e in enpideas %}
+            <tr>
+      <td>{{e.fullname}}</td>
+      <td>{{e.email}}</td>
+      <td>{{e.ideaname}}</td>
+      <td>{{e.ideadesc}}</td>
+      <td><a href="/investor/details/{{e.ideaname}}">View</a></td>
+            </tr>
+            {% empty %}
+            <h2 align="center">No StartUp Ideas Found</h2>
+            {% endfor %}
+        </table>
+        <table>
+            <h1>All</h1>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Idea Name</th>
+                <th>Idea Desc</th>
+                <th>Action</th>
+            </tr>
+            {% for e in enpideasall %}
+            <tr>
+      <td>{{e.fullname}}</td>
+      <td>{{e.email}}</td>
+      <td>{{e.ideaname}}</td>
+      <td>{{e.ideadesc}}</td>
+      <td><a href="/investor/details/{{e.ideaname}}">View</a></td>
+            </tr>
+            {% empty %}
+            <h2 align="center">No StartUp Ideas Found</h2>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</body>
+</html>

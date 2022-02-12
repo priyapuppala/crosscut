@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin | Home</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'crosscutadmin/css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'crosscutadmin/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'crosscutadmin:home' %}">Home</a></li>
+    <li><a href="{% url 'crosscutadmin:dashboard' %}">Dashboard</a></li>
+    <li><a href="{% url 'crosscutadmin:services' %}">Services</a></li>
+    <li><a href="{% url 'crosscutadmin:about' %}">About</a></li>
+    <li><a href="{% url 'crosscutadmin:logout' %}">Logout</a></li>
+</ul>
+</div>
+        <div class="welcome-text">
+        <h1><span>CrossCut Capitals Admin</span></h1>
+            <a href="{% url 'crosscutadmin:invqr' %}">Investor Queries</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="{% url 'crosscutadmin:invdet' %}">Investor Details</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="{% url 'crosscutadmin:enpqr' %}">Entreprenuer Queries</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="{% url 'crosscutadmin:enpdet' %}">Entreprenuer Details</a>
+         </div>
+</header>
+
+</body>
+</html>

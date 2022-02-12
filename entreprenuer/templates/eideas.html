@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Entreprenuer | Ideas</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'entreprenuer/css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'entreprenuer/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'entreprenuer:home' %}">Home</a></li>
+    <li><a href="{% url 'entreprenuer:services' %}">Services</a></li>
+    <li><a href="{% url 'entreprenuer:contact' %}">Contact</a></li>
+    <li><a href="{% url 'entreprenuer:about' %}">About</a></li>
+    <li><a href="{% url 'entreprenuer:logout' %}">Logout</a></li>
+</ul>
+</div>
+</header>
+<br>
+<div class="log">
+    <h2 align="center">Please Fill The Form</h2>
+    <form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit" value="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

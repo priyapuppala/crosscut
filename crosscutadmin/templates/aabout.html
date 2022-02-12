@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin | About</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'crosscutadmin/css/styles.css' %}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{% static 'crosscutadmin/img/logo.svg' %}" alt="">
+        </div>
+<ul class="nav-area">
+    <li><a href="{% url 'crosscutadmin:home' %}">Home</a></li>
+    <li><a href="{% url 'crosscutadmin:dashboard' %}">Dashboard</a></li>
+    <li><a href="{% url 'crosscutadmin:services' %}">Services</a></li>
+    <li><a href="{% url 'crosscutadmin:about' %}">About</a></li>
+    <li><a href="{% url 'crosscutadmin:logout' %}">Logout</a></li>
+</ul>
+</div>
+</header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="abt">
+    <h1 align="center">About Us</h1>
+    <h3 class="abt-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       The future isn’t built by dreamers. It’s built today, by doers. It’s crafted by people who live on the edge of cultural trends and understand where things are heading. Building tomorrow is the work of many hands and minds, not one person alone. And the future hinges on the support of a partner who understands that. At Lightspeed we believe tomorrow is built today.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our mission is to serve the world’s most extraordinary people who are building tomorrow’s companies today.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are at our best as a global team. We put the team before individual egos, and share wins and learn from our misses to make us better. We think beyond borders and limits, and move together proudly.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We always have been and always will be challengers. We keep the underdog’s perspective, stay hungry, and fight to win. We stay humble and work like we have something to prove.</h3>
+</div>
+
+</body>
+</html>
